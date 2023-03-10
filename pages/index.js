@@ -5,8 +5,10 @@ import styles from "./index.module.css";
 export default function Home() {
   const [animalInput, setAnimalInput] = useState("");
   const [result, setResult] = useState();
+  const [isLoading, setIsLoading] = useState(false);
 
   async function onSubmit(event) {
+    setIsLoading(true)
     event.preventDefault();
     try {
       const response = await fetch("/api/generate", {
@@ -14,7 +16,7 @@ export default function Home() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ animal: animalInput }),
+        body: JSON.stringify({ human: animalInput }),
       });
 
       const data = await response.json();
@@ -24,32 +26,34 @@ export default function Home() {
 
       setResult(data.result);
       setAnimalInput("");
-    } catch(error) {
+      setIsLoading(false)
+    } catch (error) {
       // Consider implementing your own error handling logic here
       console.error(error);
       alert(error.message);
+      setIsLoading(false)
     }
   }
 
   return (
     <div>
       <Head>
-        <title>OpenAI Quickstart</title>
-        <link rel="icon" href="/dog.png" />
+        <title>CV Manu Barreto</title>
       </Head>
 
       <main className={styles.main}>
-        <img src="/dog.png" className={styles.icon} />
-        <h3>Name my pet</h3>
+        <h3>CV interactivo de Manu Barreto</h3>
+        <p>Siéntete libre de hacerme consultas sobre el CV de Manu Barreto o cualquier pregunta técnica relacionada con sus habilidades y experiencia. Te responderé como si fuera Manu, basándome en sus conocimientos técnicos y en los patrones y principios que él mismo me ha definido. ¡Estoy seguro de que juntos encontraremos el candidato ideal para tu empresa!</p>
         <form onSubmit={onSubmit}>
           <input
             type="text"
-            name="animal"
-            placeholder="Enter an animal"
+            name="Human"
+            placeholder="Su consulta no molesta 😊"
             value={animalInput}
             onChange={(e) => setAnimalInput(e.target.value)}
+            disabled={isLoading}
           />
-          <input type="submit" value="Generate names" />
+          <input type="submit" value="Preguntas sobre Manu" disabled={isLoading} />
         </form>
         <div className={styles.result}>{result}</div>
       </main>
