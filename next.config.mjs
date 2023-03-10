@@ -7,6 +7,11 @@ const nextConfig = {
         path: '',
     },
     assetPrefix: './',
+    exportPathMap: function () {
+        return {
+            "/": { page: "/" },
+        };
+    },
     webpack(config) {
         config.module.rules.push({
             test: /\.svg$/,
