@@ -4,7 +4,7 @@
 const nextConfig = {
     images: {
         loader: 'akamai',
-        path: './public',
+        path: './',
     },
     assetPrefix: './',
     webpack(config) {
