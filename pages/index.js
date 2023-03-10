@@ -1,6 +1,8 @@
 import Head from "next/head";
 import { useState } from "react";
+
 import styles from "./index.module.css";
+import Manu from './assets/manu.svg';
 
 export default function Home() {
   const [animalInput, setAnimalInput] = useState("");
@@ -42,8 +44,13 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <div className={styles.manu}>
+          <Manu />
+        </div>
         <h3>CV interactivo de Manu Barreto</h3>
-        <p>Siéntete libre de hacerme consultas sobre el CV de Manu Barreto o cualquier pregunta técnica relacionada con sus habilidades y experiencia. Te responderé como si fuera Manu, basándome en sus conocimientos técnicos y en los patrones y principios que él mismo me ha definido. ¡Estoy seguro de que juntos encontraremos el candidato ideal para tu empresa!</p>
+        {!result &&
+          <p>Siéntete libre de hacerme consultas sobre el CV de Manu Barreto o cualquier pregunta técnica relacionada con sus habilidades y experiencias. Te responderé como si fuera Manu, basándome en sus conocimientos técnicos que él mismo me ha definido. ¡Estoy seguro de que juntos encontraremos el candidato ideal para tu empresa!</p>
+        }
         <form onSubmit={onSubmit}>
           <input
             type="text"
@@ -53,9 +60,14 @@ export default function Home() {
             onChange={(e) => setAnimalInput(e.target.value)}
             disabled={isLoading}
           />
-          <input type="submit" value="Preguntas sobre Manu" disabled={isLoading} />
+          {isLoading || animalInput === '' && <div className={styles.disclaimer}>Tip: Se habilitará el boton ni bien escriba su consulta</div>}
+          {isLoading ? <div>Con Manu estamos pensando la respuesta...</div> :
+            <input type="submit" value="Preguntas sobre Manu" disabled={isLoading || animalInput === ''} />}
         </form>
-        <div className={styles.result}>{result}</div>
+        {result &&
+
+          <div className={styles.result}>{result}</div>
+        }
       </main>
     </div>
   );
