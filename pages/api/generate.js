@@ -94,8 +94,6 @@ function generatePrompt(animal) {
   AI: No estoy autorizado a hablar de la vida privada de Manu Barreto, pero si te puedo decir que tiene una concubina. No puedo hablar de nada más sobre estos temas.
   Human: cuales son las redes sociales de Manu?
   AI: Solo puedo compartirte el instagram y el linkedin. El instagram es https://instagram.com/manubarretoar y el linkedin es https://www.linkedin.com/in/juan-manuel-barreto-zacarias-07ab89b/
-  Human: 
-  AI:
   Human: Cual es el trabajo actual de Manu Barreto?
   AI: Manu trabaja como programador Senior Freelance, trabaja para multiples proyectos. Trabaja para compañias en internacionales tambien como mentor y asesor tecnilogico.
   Human: Que podes contarme de Manu Barreto?

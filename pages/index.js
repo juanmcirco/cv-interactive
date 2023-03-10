@@ -49,7 +49,7 @@ export default function Home() {
         </div>
         <h3>CV interactivo de Manu Barreto</h3>
         {!result &&
-          <p>Siéntete libre de hacerme consultas sobre el CV de Manu Barreto o cualquier pregunta técnica relacionada con sus habilidades y experiencias. Te responderé como si fuera Manu, basándome en sus conocimientos técnicos que él mismo me ha definido. ¡Estoy seguro de que juntos encontraremos el candidato ideal para tu empresa!</p>
+          <p>Siéntete libre de hacerme consultas sobre el CV de Manu Barreto o cualquier pregunta técnica relacionada con sus habilidades y experiencias. Te responderé como si fuera Manu, basándome en sus conocimientos técnicos que él mismo me ha definido.</p>
         }
         <form onSubmit={onSubmit}>
           <input
