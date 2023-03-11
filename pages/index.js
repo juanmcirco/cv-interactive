@@ -59,7 +59,7 @@ export default function Home({ passEnv }) {
           <>
             {(passwordInputLength > 5 && passwordInputLength <= 15) && <div className={styles.disclaimer}>Mmm me parece que no tenes la password</div>}
             {passwordInputLength >= 15 && <div className={styles.disclaimer}>Mmm Dejaría de probar, no vas a llegar a nada...</div>}
-            <input type="password" onChange={handlePass} />
+            <input type="password" placeholder="Pass?" onChange={handlePass} />
           </>
         }
         {pass &&
