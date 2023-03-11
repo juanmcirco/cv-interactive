@@ -66,7 +66,7 @@ export default function Home({ passEnv }) {
           }
         </h3>
         <div className={styles.btnsLang}>
-          <span onClick={() => handleLang('ENG')} className={lang === 'ENG' && styles.btnSelected}>English</span> | <span onClick={() => handleLang('SPA')} className={lang === 'SPA' && styles.btnSelected}>Español</span>
+          <span onClick={() => handleLang('ENG')} className={lang === 'ENG' ? styles.btnSelected : ''}>English</span> | <span onClick={() => handleLang('SPA')} className={lang === 'SPA' ? styles.btnSelected : ''}>Español</span>
         </div>
         {!pass &&
           <>
