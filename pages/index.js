@@ -9,12 +9,13 @@ export default function Home({ passEnv }) {
   const [result, setResult] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [pass, setPass] = useState();
+  const [lang, setLang] = useState('ENG');
   const [passwordInputLength, setPasswordInputLength] = useState(0);
   async function onSubmit(event) {
     setIsLoading(true)
     event.preventDefault();
     try {
-      const response = await fetch("/api/generate", {
+      const response = await fetch(lang === 'SPA' ? '/api/generate' : '/api/generate-eng', {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -43,6 +44,9 @@ export default function Home({ passEnv }) {
       setPass(event.target.value)
     }
   }
+  const handleLang = (langValue) => {
+    setLang(langValue)
+  }
 
   return (
     <div>
@@ -54,31 +58,45 @@ export default function Home({ passEnv }) {
         <div className={styles.manu}>
           <Manu />
         </div>
-        <h3>CV interactivo de Manu Barreto</h3>
+        <h3>
+          {lang === 'SPA' ?
+            'CV interactivo de Manu Barreto'
+            :
+            'Interactive Resume of Manu Barreto'
+          }
+        </h3>
+        <div className="btns-lang">
+          <span onClick={() => handleLang('ENG')} className={lang === 'ENG' && styles.btnSelected}>English</span> | <span onClick={() => handleLang('SPA')} className={lang === 'SPA' && styles.btnSelected}>Español</span>
+        </div>
         {!pass &&
           <>
-            {(passwordInputLength > 5 && passwordInputLength <= 15) && <div className={styles.disclaimer}>Mmm me parece que no tenes la password</div>}
-            {passwordInputLength >= 15 && <div className={styles.disclaimer}>Mmm Dejaría de probar, no vas a llegar a nada...</div>}
+            {(passwordInputLength > 5 && passwordInputLength <= 15) && <div className={styles.disclaimer}> {lang === 'SPA' ? 'Mmm me parece que no tenes la password' : "Mmm, it seems to me that you don't have the password."}</div>}
+            {passwordInputLength >= 15 && <div className={styles.disclaimer}>{lang === 'SPA' ? 'Mmm Dejaría de probar, no vas a llegar a nada...' : "Mmm, I would stop trying, you won't get anywhere..."}</div>}
             <input type="password" placeholder="Pass?" onChange={handlePass} />
           </>
         }
         {pass &&
           <>
             {!result &&
-              <p>Siéntete libre de hacerme consultas sobre el CV de Manu Barreto o cualquier pregunta técnica relacionada con sus habilidades y experiencias. Te responderé como si fuera Manu, basándome en sus conocimientos técnicos que él mismo me ha definido.</p>
+              <p>
+                {lang === 'SPA' ?
+                  "Siéntete libre de hacerme consultas sobre el CV de Manu Barreto o cualquier pregunta técnica relacionada con sus habilidades y experiencias. Te responderé como si fuera Manu, basándome en sus conocimientos técnicos que él mismo me ha definido." :
+                  "Feel free to ask me any questions about Manu Barreto's resume or any technical questions related to his skills and experiences. I will respond to you as if I were Manu, based on the technical knowledge that he has defined for me."
+                }
+              </p>
             }
             <form onSubmit={onSubmit}>
               <input
                 type="text"
                 name="Human"
-                placeholder="Su consulta no molesta 😊"
+                placeholder={lang === 'SPA' ? "Su consulta no molesta 😊" : "Your inquiry is not a bother 😊"}
                 value={animalInput}
                 onChange={(e) => setAnimalInput(e.target.value)}
                 disabled={isLoading}
               />
-              {isLoading || animalInput === '' && <div className={styles.disclaimer}>Tip: Se habilitará el boton ni bien escriba su consulta</div>}
-              {isLoading ? <div className={styles.writing}>Con Manu estamos pensando la respuesta...</div> :
-                <input type="submit" value="Preguntas sobre Manu" disabled={isLoading || animalInput === ''} />}
+              {isLoading || animalInput === '' && <div className={styles.disclaimer}>{lang === 'SPA' ? "Tip: Se habilitará el boton ni bien escriba su consulta" : "Tip: The button will be enabled as soon as you write your query."}</div>}
+              {isLoading ? <div className={styles.writing}>{lang === 'SPA' ? "Con Manu estamos pensando la respuesta..." : "We're thinking about the response with Manu..."}</div> :
+                <input type="submit" value={lang === 'SPA' ? "Preguntas sobre Manu" : " Questions about Manu"} disabled={isLoading || animalInput === ''} />}
             </form>
             {result &&
 

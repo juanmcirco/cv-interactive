@@ -124,3 +124,7 @@
   margin: 30px;
   margin-bottom: -24px;
 }
+
+.btnSelected {
+  color: darkblue
+}
