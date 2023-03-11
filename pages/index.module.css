@@ -54,7 +54,7 @@
 .main form {
   display: flex;
   flex-direction: column;
-  width: 320px;
+  width: 100%;
 }
 
 .main input[type="text"] {
@@ -63,6 +63,12 @@
   border-radius: 4px;
   margin-bottom: 24px;
   outline-color: #10a37f;
+  width: -webkit-fill-available;
+}
+
+.main input {
+  width: -webkit-fill-available;
+  margin: 24px;
 }
 
 .main ::placeholder {
@@ -78,6 +84,7 @@
   border-radius: 4px;
   text-align: center;
   cursor: pointer;
+  margin-bottom: 0;
 }
 
 .main input[disabled] {
@@ -88,6 +95,7 @@
   border-radius: 4px;
   text-align: center;
   cursor: pointer;
+  margin-bottom: 0;
 }
 
 .main .result {
@@ -107,4 +115,12 @@
 .disclaimer {
   font-size: 11px;
   color: #ec512f;
+  margin: 0 30px;
+  margin-bottom: -24px;
+}
+
+.writing {
+  font-size: 11px;
+  margin: 30px;
+  margin-bottom: -24px;
 }

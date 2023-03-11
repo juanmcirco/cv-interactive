@@ -77,7 +77,7 @@ export default function Home({ passEnv }) {
                 disabled={isLoading}
               />
               {isLoading || animalInput === '' && <div className={styles.disclaimer}>Tip: Se habilitará el boton ni bien escriba su consulta</div>}
-              {isLoading ? <div>Con Manu estamos pensando la respuesta...</div> :
+              {isLoading ? <div className={styles.writing}>Con Manu estamos pensando la respuesta...</div> :
                 <input type="submit" value="Preguntas sobre Manu" disabled={isLoading || animalInput === ''} />}
             </form>
             {result &&
