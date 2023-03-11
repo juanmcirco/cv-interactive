@@ -4,11 +4,12 @@ import { useState } from "react";
 import styles from "./index.module.css";
 import Manu from './assets/manu.svg';
 
-export default function Home() {
+export default function Home({ passEnv }) {
   const [animalInput, setAnimalInput] = useState("");
   const [result, setResult] = useState();
   const [isLoading, setIsLoading] = useState(false);
-
+  const [pass, setPass] = useState();
+  const [passwordInputLength, setPasswordInputLength] = useState(0);
   async function onSubmit(event) {
     setIsLoading(true)
     event.preventDefault();
@@ -36,6 +37,12 @@ export default function Home() {
       setIsLoading(false)
     }
   }
+  const handlePass = (event) => {
+    setPasswordInputLength(event.target.value.length);
+    if (event.target.value === passEnv) {
+      setPass(event.target.value)
+    }
+  }
 
   return (
     <div>
@@ -48,27 +55,45 @@ export default function Home() {
           <Manu />
         </div>
         <h3>CV interactivo de Manu Barreto</h3>
-        {!result &&
-          <p>Siéntete libre de hacerme consultas sobre el CV de Manu Barreto o cualquier pregunta técnica relacionada con sus habilidades y experiencias. Te responderé como si fuera Manu, basándome en sus conocimientos técnicos que él mismo me ha definido.</p>
+        {!pass &&
+          <>
+            {(passwordInputLength > 5 && passwordInputLength <= 15) && <div className={styles.disclaimer}>Mmm me parece que no tenes la password</div>}
+            {passwordInputLength >= 15 && <div className={styles.disclaimer}>Mmm Dejaría de probar, no vas a llegar a nada...</div>}
+            <input type="password" onChange={handlePass} />
+          </>
         }
-        <form onSubmit={onSubmit}>
-          <input
-            type="text"
-            name="Human"
-            placeholder="Su consulta no molesta 😊"
-            value={animalInput}
-            onChange={(e) => setAnimalInput(e.target.value)}
-            disabled={isLoading}
-          />
-          {isLoading || animalInput === '' && <div className={styles.disclaimer}>Tip: Se habilitará el boton ni bien escriba su consulta</div>}
-          {isLoading ? <div>Con Manu estamos pensando la respuesta...</div> :
-            <input type="submit" value="Preguntas sobre Manu" disabled={isLoading || animalInput === ''} />}
-        </form>
-        {result &&
+        {pass &&
+          <>
+            {!result &&
+              <p>Siéntete libre de hacerme consultas sobre el CV de Manu Barreto o cualquier pregunta técnica relacionada con sus habilidades y experiencias. Te responderé como si fuera Manu, basándome en sus conocimientos técnicos que él mismo me ha definido.</p>
+            }
+            <form onSubmit={onSubmit}>
+              <input
+                type="text"
+                name="Human"
+                placeholder="Su consulta no molesta 😊"
+                value={animalInput}
+                onChange={(e) => setAnimalInput(e.target.value)}
+                disabled={isLoading}
+              />
+              {isLoading || animalInput === '' && <div className={styles.disclaimer}>Tip: Se habilitará el boton ni bien escriba su consulta</div>}
+              {isLoading ? <div>Con Manu estamos pensando la respuesta...</div> :
+                <input type="submit" value="Preguntas sobre Manu" disabled={isLoading || animalInput === ''} />}
+            </form>
+            {result &&
 
-          <div className={styles.result}>{result}</div>
+              <div className={styles.result}>{result}</div>
+            }
+          </>
         }
       </main>
     </div>
   );
+}
+
+export async function getStaticProps(context) {
+
+  return {
+    props: { passEnv: process.env.PASSGENERIC },
+  };
 }
