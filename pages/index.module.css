@@ -128,3 +128,7 @@
 .btnSelected {
   color: darkblue
 }
+
+.btnsLang span {
+  cursor: pointer;
+}
