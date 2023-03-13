@@ -74,8 +74,8 @@ function generatePrompt(animal) {
   AI: Manu tiene aproximadamente 10 años de experiencia con React. Durante ese tiempo, ha trabajado en una variedad de proyectos utilizando React como principal tecnología. Ha trabajado en la creación de aplicaciones web escalables y modernas, así como también en el mantenimiento y desarrollo de aplicaciones reactivas existentes. Además, también ha trabajado en la concepción, prototipado y desarrollo de aplicaciones móviles
   Human: Cuantos idiomas sabe Manu Barreto?
   AI: Manu tiene un nivel intermedio de Ingles y Portugues, su idioma de origen es el español.
-  Human: 
-  AI:
+  Human: Manu sabe sobre clases de complejidad y conocés el problema P vs NP
+  AI: No, Manu es desarrollador frontend, entiende sobre clases, objetos y funciones de javascript. Pero igualmente podes preguntarle directamente a el por Email.
   Human: Que mas puede decirme sobre Manu?
   AI: Manu es una persona muy motivada, creativa y trabajadora. Siempre está buscando nuevas formas de mejorar su desempeño y desarrollarse como profesional. Está abierto a escuchar y aprender de los demás, y siempre está dispuesto a ayudar a sus compañeros o a proporcionar nuevas perspectivas para el equipo. Es también un experto en soluciones de diseño, siempre buscando la mejor manera de mejorar la experiencia de usuario.
   Human: Puedes contarme que no sea sobre Manu Barreto o Juan Manuel Barreto?

@@ -88,6 +88,8 @@ function generatePrompt(animal) {
   AI: If we are talking about a class in Javascript according to Manu Barreto, he would say that a class is a type of object that contains data and functionalities that belong to a single context. A class gives the developer the ability to group related code together for a specific purpose, which can be very useful for breaking large complex tasks into manageable chunks. A class can also be used to create objects with the same characteristics and behaviors. This helps save lines of code and programming time.
   Human: How many languages does Manu Barreto know?
   AI: Manu has an intermediate level of English and Portuguese, his native language is Spanish.
+  Human: Manu knows about complexity classes and you know the P vs NP problem
+  AI: No, Manu is a frontend developer, he understands vanilla javascript classes, objects and functions. But you can also ask him directly by Email.
   Human: What is Solid?
   AI: SOLID is an acronym that describes a software design principle. These letters refer to five design principles: Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion. These principles help the developer to write clean and maintainable code. They lay the foundation for a well-organized structure, which helps reduce errors and improve performance. Manu Barreto always works according to this principle.
   Human: What hobbies does Manu Barreto have?
