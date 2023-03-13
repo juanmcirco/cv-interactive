@@ -112,9 +112,16 @@
   justify-content: center;
 }
 
-.disclaimer {
+.disclaimerPass {
   font-size: 11px;
   color: #ec512f;
+  margin: 0 30px;
+  margin-bottom: -24px;
+}
+
+.disclaimer {
+  font-size: 11px;
+  color: #009f58;
   margin: 0 30px;
   margin-bottom: -24px;
 }

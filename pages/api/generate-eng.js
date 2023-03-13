@@ -86,6 +86,8 @@ function generatePrompt(animal) {
   AI: Manu Barreto was born on 04/23/1984, he is 38 years old, his contact email is juanmcirco@mail.com or you can contact him via WhatsApp at +5491138023557. He is born in Quilmes but currently lives in Saenz Peña, Buenos Aires, Argentina.
   Human: Can you describe a javascript class according to manu?
   AI: If we are talking about a class in Javascript according to Manu Barreto, he would say that a class is a type of object that contains data and functionalities that belong to a single context. A class gives the developer the ability to group related code together for a specific purpose, which can be very useful for breaking large complex tasks into manageable chunks. A class can also be used to create objects with the same characteristics and behaviors. This helps save lines of code and programming time.
+  Human: How many languages does Manu Barreto know?
+  AI: Manu has an intermediate level of English and Portuguese, his native language is Spanish.
   Human: What is Solid?
   AI: SOLID is an acronym that describes a software design principle. These letters refer to five design principles: Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion. These principles help the developer to write clean and maintainable code. They lay the foundation for a well-organized structure, which helps reduce errors and improve performance. Manu Barreto always works according to this principle.
   Human: What hobbies does Manu Barreto have?

@@ -10,11 +10,13 @@ export default function Home({ passEnv }) {
   const [isLoading, setIsLoading] = useState(false);
   const [pass, setPass] = useState();
   const [lang, setLang] = useState('ENG');
+  const [firstIteration, setFirstIteration] = useState(null)
   const [passwordInputLength, setPasswordInputLength] = useState(0);
   async function onSubmit(event) {
     setIsLoading(true)
     event.preventDefault();
     try {
+      setResult('');
       const response = await fetch(lang === 'SPA' ? '/api/generate' : '/api/generate-eng', {
         method: "POST",
         headers: {
@@ -29,6 +31,7 @@ export default function Home({ passEnv }) {
       }
 
       setResult(data.result);
+      setFirstIteration(true)
       setAnimalInput("");
       setIsLoading(false)
     } catch (error) {
@@ -45,6 +48,7 @@ export default function Home({ passEnv }) {
     }
   }
   const handleLang = (langValue) => {
+    setResult(null)
     setLang(langValue)
   }
 
@@ -70,14 +74,14 @@ export default function Home({ passEnv }) {
         </div>
         {!pass &&
           <>
-            {(passwordInputLength > 5 && passwordInputLength <= 15) && <div className={styles.disclaimer}> {lang === 'SPA' ? 'Mmm me parece que no tenes la password' : "Mmm, it seems to me that you don't have the password."}</div>}
-            {passwordInputLength >= 15 && <div className={styles.disclaimer}>{lang === 'SPA' ? 'Mmm Dejaría de probar, no vas a llegar a nada...' : "Mmm, I would stop trying, you won't get anywhere..."}</div>}
-            <input type="password" placeholder="Pass?" onChange={handlePass} />
+            {(passwordInputLength > 5 && passwordInputLength <= 15) && <div className={styles.disclaimerPass}> {lang === 'SPA' ? 'Mmm me parece que no tenes la password' : "Mmm, it seems to me that you don't have the password."}</div>}
+            {passwordInputLength >= 15 && <div className={styles.disclaimerPass}>{lang === 'SPA' ? 'Mmm Dejaría de probar, no vas a llegar a nada...' : "Mmm, I would stop trying, you won't get anywhere..."}</div>}
+            <input type="password" placeholder="******" onChange={handlePass} />
           </>
         }
         {pass &&
           <>
-            {!result &&
+            {!firstIteration &&
               <p>
                 {lang === 'SPA' ?
                   "Siéntete libre de hacerme consultas sobre el CV de Manu Barreto o cualquier pregunta técnica relacionada con sus habilidades y experiencias. Te responderé como si fuera Manu, basándome en sus conocimientos técnicos que él mismo me ha definido." :
@@ -99,7 +103,6 @@ export default function Home({ passEnv }) {
                 <input type="submit" value={lang === 'SPA' ? "Preguntas sobre Manu" : " Questions about Manu"} disabled={isLoading || animalInput === ''} />}
             </form>
             {result &&
-
               <div className={styles.result}>{result}</div>
             }
           </>

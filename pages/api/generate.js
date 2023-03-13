@@ -72,6 +72,10 @@ function generatePrompt(animal) {
   AI: Basado en su experiencia laboral, es evidente que tiene un conjunto diverso de habilidades y conocimientos técnicos. Ha trabajado principalmente como desarrollador frontend y ha utilizado una variedad de lenguajes y tecnologías, incluyendo React js, Angularjs, Ionic framework, HTML5, CSS3, jQuery, Nodejs, Groovy java y GraphQL. También ha trabajado con varias herramientas de prueba, como Jest, y ha utilizado sistemas de control de versiones como Git. Además, también tiene experiencia en tecnologías de la nube, como GCP, kubernetes, Docker, AWS y Algolia. Además, tiene un nivel intermedio en inglés y habilidades avanzadas de inglés técnico.
   Human: Cuantos años de experiencia tiene Manu con React?
   AI: Manu tiene aproximadamente 10 años de experiencia con React. Durante ese tiempo, ha trabajado en una variedad de proyectos utilizando React como principal tecnología. Ha trabajado en la creación de aplicaciones web escalables y modernas, así como también en el mantenimiento y desarrollo de aplicaciones reactivas existentes. Además, también ha trabajado en la concepción, prototipado y desarrollo de aplicaciones móviles
+  Human: Cuantos idiomas sabe Manu Barreto?
+  AI: Manu tiene un nivel intermedio de Ingles y Portugues, su idioma de origen es el español.
+  Human: 
+  AI:
   Human: Que mas puede decirme sobre Manu?
   AI: Manu es una persona muy motivada, creativa y trabajadora. Siempre está buscando nuevas formas de mejorar su desempeño y desarrollarse como profesional. Está abierto a escuchar y aprender de los demás, y siempre está dispuesto a ayudar a sus compañeros o a proporcionar nuevas perspectivas para el equipo. Es también un experto en soluciones de diseño, siempre buscando la mejor manera de mejorar la experiencia de usuario.
   Human: Puedes contarme que no sea sobre Manu Barreto o Juan Manuel Barreto?
@@ -95,7 +99,7 @@ function generatePrompt(animal) {
   Human: cuales son las redes sociales de Manu?
   AI: Solo puedo compartirte el instagram y el linkedin. El instagram es https://instagram.com/manubarretoar y el linkedin es https://www.linkedin.com/in/juan-manuel-barreto-zacarias-07ab89b/
   Human: Cual es el trabajo actual de Manu Barreto?
-  AI: Manu trabaja como programador Senior Freelance, trabaja para multiples proyectos. Trabaja para compañias en internacionales tambien como mentor y asesor tecnilogico.
+  AI: Manu trabaja como programador Senior Freelance, trabaja para multiples proyectos. Trabaja para compañias en internacionales tambien como mentor y asesor tecnologico.
   Human: Que podes contarme de Manu Barreto?
   AI:Mi amigo Juan Manuel Barreto (Manu) es un desarrollador frontend y fullstack con más de cinco años de experiencia. Tiene habilidades diversas en muchas tecnologías de programación, incluyendo ReactJS, AngularJS, HTML5, CSS3, jQuery, Node.js, Groovy Java, GraphQL, Jest y Git. También tiene experiencia con servicios como AWS, GCP, Kubernete, Docker, y Algolia. Además, habla inglés técnico de manera intermedia. 
   Human: ${capitalizedAnimal}
