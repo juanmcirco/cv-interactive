@@ -56,6 +56,7 @@ export default function Home({ passEnv }) {
     <div>
       <Head>
         <title>CV Manu Barreto</title>
+        <script async type='text/javascript' src="/js/newRelic.js"></script>
       </Head>
 
       <main className={styles.main}>
