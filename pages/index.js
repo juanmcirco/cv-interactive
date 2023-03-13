@@ -3,18 +3,19 @@ import { useState } from "react";
 
 import styles from "./index.module.css";
 import Manu from './assets/manu.svg';
+import { event } from "nextjs-google-analytics";
 
 export default function Home({ passEnv }) {
-  const [animalInput, setAnimalInput] = useState("");
+  const [messageInput, setMessageInput] = useState("");
   const [result, setResult] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [pass, setPass] = useState();
   const [lang, setLang] = useState('ENG');
   const [firstIteration, setFirstIteration] = useState(null)
   const [passwordInputLength, setPasswordInputLength] = useState(0);
-  async function onSubmit(event) {
+  async function onSubmit(e) {
     setIsLoading(true)
-    event.preventDefault();
+    e.preventDefault();
     try {
       setResult('');
       const response = await fetch(lang === 'SPA' ? '/api/generate' : '/api/generate-eng', {
@@ -22,7 +23,12 @@ export default function Home({ passEnv }) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ human: animalInput }),
+        body: JSON.stringify({ human: messageInput }),
+      });
+
+      event("mensaje de usuario", {
+        category: "chat",
+        label: messageInput,
       });
 
       const data = await response.json();
@@ -30,9 +36,14 @@ export default function Home({ passEnv }) {
         throw data.error || new Error(`Request failed with status ${response.status}`);
       }
 
+      event("resultado del bot", {
+        category: "chat",
+        label: data.result,
+      });
+
       setResult(data.result);
       setFirstIteration(true)
-      setAnimalInput("");
+      setMessageInput("");
       setIsLoading(false)
     } catch (error) {
       // Consider implementing your own error handling logic here
@@ -97,13 +108,13 @@ export default function Home({ passEnv }) {
                 type="text"
                 name="Human"
                 placeholder={lang === 'SPA' ? "Su consulta no molesta 😊" : "Your inquiry is not a bother 😊"}
-                value={animalInput}
-                onChange={(e) => setAnimalInput(e.target.value)}
+                value={messageInput}
+                onChange={(e) => setMessageInput(e.target.value)}
                 disabled={isLoading}
               />
-              {isLoading || animalInput === '' && <div className={styles.disclaimer}>{lang === 'SPA' ? "Tip: Se habilitará el boton ni bien escriba su consulta" : "Tip: The button will be enabled as soon as you write your query."}</div>}
+              {isLoading || messageInput === '' && <div className={styles.disclaimer}>{lang === 'SPA' ? "Tip: Se habilitará el boton ni bien escriba su consulta" : "Tip: The button will be enabled as soon as you write your query."}</div>}
               {isLoading ? <div className={styles.writing}>{lang === 'SPA' ? "Con Manu estamos pensando la respuesta..." : "We're thinking about the response with Manu..."}</div> :
-                <input type="submit" value={lang === 'SPA' ? "Preguntas sobre Manu" : " Questions about Manu"} disabled={isLoading || animalInput === ''} />}
+                <input type="submit" value={lang === 'SPA' ? "Preguntas sobre Manu" : " Questions about Manu"} disabled={isLoading || messageInput === ''} />}
             </form>
             {result &&
               <div className={styles.result}>{result}</div>
