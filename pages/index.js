@@ -73,9 +73,6 @@ export default function Home({ passEnv }) {
       </Head>
 
       <main className={styles.main}>
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5LR9R6F"
-          height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
         <div className={styles.manu}>
           <Manu />
         </div>
