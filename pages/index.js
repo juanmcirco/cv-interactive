@@ -78,9 +78,9 @@ export default function Home({ passEnv }) {
         </div>
         <h3>
           {lang === 'SPA' ?
-            'CV interactivo de Manu Barreto'
+            'Asistente Laboral'
             :
-            'Interactive Resume of Manu Barreto'
+            'Job assistance'
           }
         </h3>
         <div className={styles.btnsLang}>
@@ -113,8 +113,8 @@ export default function Home({ passEnv }) {
                 disabled={isLoading}
               />
               {isLoading || messageInput === '' && <div className={styles.disclaimer}>{lang === 'SPA' ? "Tip: Se habilitará el boton ni bien escriba su consulta" : "Tip: The button will be enabled as soon as you write your query."}</div>}
-              {isLoading ? <div className={styles.writing}>{lang === 'SPA' ? "Con Manu estamos pensando la respuesta..." : "We're thinking about the response with Manu..."}</div> :
-                <input type="submit" value={lang === 'SPA' ? "Preguntas sobre Manu" : " Questions about Manu"} disabled={isLoading || messageInput === ''} />}
+              {isLoading ? <div className={styles.writing}>{lang === 'SPA' ? "Estamos pensando la respuesta..." : "We're thinking about the response with Manu..."}</div> :
+                <input type="submit" value={lang === 'SPA' ? "Preguntas sobre Manu y Ale" : " Questions about Manu y Ale"} disabled={isLoading || messageInput === ''} />}
             </form>
             {result &&
               <div className={styles.result}>{result}</div>
