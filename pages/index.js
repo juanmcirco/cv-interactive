@@ -98,8 +98,8 @@ export default function Home({ passEnv }) {
             {!firstIteration &&
               <p>
                 {lang === 'SPA' ?
-                  "Siéntete libre de hacerme consultas sobre el CV de Manu Barreto o cualquier pregunta técnica relacionada con sus habilidades y experiencias. Te responderé como si fuera Manu, basándome en sus conocimientos técnicos que él mismo me ha definido." :
-                  "Feel free to ask me any questions about Manu Barreto's resume or any technical questions related to his skills and experiences. I will respond to you as if I were Manu, based on the technical knowledge that he has defined for me."
+                  "Siéntete libre de hacerme consultas sobre los postulantes. Seré tu asistente y responderé basándome en sus conocimientos técnicos que ellos mismos me han definido." :
+                  "Feel free to ask me questions about the applicants. I will be your assistant and I will answer based on their technical knowledge that they themselves have defined for me."
                 }
               </p>
             }
