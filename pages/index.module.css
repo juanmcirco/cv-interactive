@@ -142,7 +142,6 @@
 
 .lastQuestion {
   border-bottom: 1px solid gray;
-  margin: 10px 0;
-  margin-right: 10px;
+  margin-bottom: 10px;
   color: #ff9507;
 }
