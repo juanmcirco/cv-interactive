@@ -1,7 +1,7 @@
 body {
-    background-image: url("/Background.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
+    background: -webkit-linear-gradient(90deg, rgb(32, 32, 32) 10%, rgb(86, 86, 86) 90%);
+    background: -moz-linear-gradient(90deg, rgb(32, 32, 32) 10%, rgb(86, 86, 86) 90%);
+    background: -ms-linear-gradient(90deg, rgb(32, 32, 32) 10%, rgb(86, 86, 86) 90%);
+    background: -o-linear-gradient(90deg, rgb(32, 32, 32) 10%, rgb(86, 86, 86) 90%);
+    background: linear-gradient(90deg, rgb(32, 32, 32) 10%, rgb(86, 86, 86) 90%);
 }
