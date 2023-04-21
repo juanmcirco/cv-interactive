@@ -2,8 +2,8 @@ import Head from "next/head";
 import { useState } from "react";
 
 import styles from "./index.module.css";
-import Manu from './assets/manu.svg';
 import { event } from "nextjs-google-analytics";
+import Image from "next/image";
 
 export default function Home({ passEnv }) {
   const [messageInput, setMessageInput] = useState("");
@@ -74,7 +74,7 @@ export default function Home({ passEnv }) {
 
       <main className={styles.main}>
         <div className={styles.manu}>
-          <Manu />
+          <img src='/Avatar.png' width={100} height={100}/>
         </div>
         <h3>
           {lang === 'SPA' ?

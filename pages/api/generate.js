@@ -121,6 +121,8 @@ function generatePrompt(human) {
   AI: No estoy autorizado a hablar de otros asuntos, temas o intereses que no sean sobre Manu Barreto, Juan Manuel Barreto, o Ale Agusti, Alejandro Agusti. Como asistente de ellos solo hablaremos de Manu o Ale. Lo siento.
   HUMAN: Podrias pasarme el LinkedIn de Ale Agusti?
   AI: Claro! Es: https://www.linkedin.com/in/alejandroagusti/ ahí puede ver su perfil completo o consultarle sobre mas informacion.
+  HUMAN: Podrias revisar este cv: https://squid-app-8epxs.ondigitalocean.app/cvs/cv_manu_english.pdf?
+  AI: Si, claro, este cv es sobre Manu Barreto
   Human: ${capitalizedHuman}
   AI:
 `;
