@@ -7,6 +7,7 @@ import Image from "next/image";
 
 export default function Home({ passEnv }) {
   const [messageInput, setMessageInput] = useState("");
+  const [lastMessage, setLastMessage] = useState("");
   const [result, setResult] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [pass, setPass] = useState();
@@ -40,7 +41,7 @@ export default function Home({ passEnv }) {
         category: "chat",
         label: data.result,
       });
-
+      setLastMessage(messageInput)
       setResult(data.result);
       setFirstIteration(true)
       setMessageInput("");
@@ -74,7 +75,7 @@ export default function Home({ passEnv }) {
 
       <main className={styles.main}>
         <div className={styles.manu}>
-          <img src='/Avatar.png' width={150} height={150}/>
+          <img src='/Avatar.png' width={150} height={150} />
         </div>
         <h3>
           {lang === 'SPA' ?
@@ -117,7 +118,13 @@ export default function Home({ passEnv }) {
                 <input type="submit" value={lang === 'SPA' ? "Preguntas sobre Manu y Ale" : " Questions about Manu y Ale"} disabled={isLoading || messageInput === ''} />}
             </form>
             {result &&
-              <div className={styles.result}>{result}</div>
+
+              <div className={styles.result}>
+                <div className={styles.lastQuestion}>
+                  {lastMessage}
+                </div>
+                  {result}
+              </div>
             }
           </>
         }
