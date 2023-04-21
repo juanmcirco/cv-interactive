@@ -74,7 +74,7 @@ export default function Home({ passEnv }) {
 
       <main className={styles.main}>
         <div className={styles.manu}>
-          <img src='/Avatar.png' width={100} height={100}/>
+          <img src='/Avatar.png' width={150} height={150}/>
         </div>
         <h3>
           {lang === 'SPA' ?

@@ -18,7 +18,7 @@
 .main input {
   font-size: 16px;
   line-height: 24px;
-  color: #353740;
+  color: #616474;
   font-family: "ColfaxAI", Helvetica, sans-serif;
 }
 
@@ -133,7 +133,7 @@
 }
 
 .btnSelected {
-  color: darkblue
+  color: rgb(78, 237, 198)
 }
 
 .btnsLang span {
