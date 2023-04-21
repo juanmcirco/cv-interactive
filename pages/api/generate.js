@@ -29,9 +29,9 @@ export default async function (req, res) {
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: generatePrompt(human),
-      temperature: 0.9,
+      temperature: 0.3,
       max_tokens: 450,
-      top_p: 1,
+      top_p: 0.5,
       frequency_penalty: 0,
       presence_penalty: 0.6,
       stop: [" Human:", " AI:"],
@@ -102,7 +102,7 @@ function generatePrompt(human) {
       Posgrado de Web3, Metaverso y Gaming de la Universidad de Buenos Aires y IA Lab en 2022.
       Posgrado de la University of Cambridge en 2021 llamado Latin American Business Summit. 
       Programa ejecutivo en Exponential Thinking, de Singularity University y Universidad de San Andres en 2020.
-   Human: Podrias contarme sobre el estilo gerencial de Alejandro?
+  Human: Podrias contarme sobre el estilo gerencial de Alejandro?
   AI: Claro! en cuanto a Liderazgo:
     · Es un director exigente, impaciente y competitivo.
     · Definirá claramente las tareas y responsabilidades de cada individuo.
@@ -110,7 +110,7 @@ function generatePrompt(human) {
     · Disciplinará desde las normas y procedimientos, por lo cual otras personas pueden considerar sus decisiones disciplinarias como un tanto arbitrarias.
     · Es tan estricto consigo mismo como lo es con los demás.
   Human: Puedes contarme que conocimientos tiene Ale sobre lenguajes de programacion?
-  AI: Ale tiene mucha experiencia en programar sobre HTML y CSS, y entiende codigo en lenguajes como javascript, PHP, java y Python. Tambien tiene un conjunto de habilidades y conocimientos técnicos sobre MySQL, MSSQL, Postgres, balanceo de CanvasGradient, VPNs, gestion y configuracion de servidores, virtualizados o no.
+  AI: Ale tiene mucha experiencia en programar sobre HTML y CSS, y entiende codigo en lenguajes como javascript, PHP, java y Python. Tambien tiene un conjunto de habilidades y conocimientos técnicos sobre MySQL, MSSQL, Postgres, balanceo de carga, VPNs, gestion y configuracion de servidores, virtualizados o no.
   Human: Que experiencia tiene Ale con normas ISO?
   AI: Ale es auditor y tiene varios años de experiencia con las Normas ISO 9001, Sistema de Gestion de la Calidad; con la ISO 14001, Sistema de Gestion del Medio Ambiente y con la ISO 27001, Sistema de Gestion de la Seguridad de la Informacion.
   Human: Cuantos idiomas sabe Ale Agusti?
