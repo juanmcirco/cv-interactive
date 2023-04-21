@@ -67,7 +67,7 @@ export default function Home({ passEnv }) {
   return (
     <div>
       <Head>
-        <title>CV Manu Barreto</title>
+        <title>Job assistance</title>
         <script async type='text/javascript' src="/js/newrelic.js"></script>
         <script async type='text/javascript' src="/js/gtm.js"></script>
         <link rel="icon" type="image/x-icon" href="/favicon.png"></link>
