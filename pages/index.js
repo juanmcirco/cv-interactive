@@ -77,13 +77,13 @@ export default function Home({ passEnv }) {
         <div className={styles.manu}>
           <img src='/Avatar_Febicham2.png' width={200}  />
         </div>
-        {/* <h3>
+        <h3>
           {lang === 'SPA' ?
-            'Asistente Laboral'
+            'Asistente FEBICHAM'
             :
             'Job assistance'
           }
-        </h3> */}
+        </h3>
         {/* <div className={styles.btnsLang}>
           <span onClick={() => handleLang('ENG')} className={lang === 'ENG' ? styles.btnSelected : ''}>English</span> | <span onClick={() => handleLang('SPA')} className={lang === 'SPA' ? styles.btnSelected : ''}>Español</span>
         </div> */}
