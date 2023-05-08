@@ -11,7 +11,7 @@ export default function Home({ passEnv }) {
   const [result, setResult] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [pass, setPass] = useState();
-  const [lang, setLang] = useState('ENG');
+  const [lang, setLang] = useState('SPA');
   const [firstIteration, setFirstIteration] = useState(null)
   const [passwordInputLength, setPasswordInputLength] = useState(0);
   async function onSubmit(e) {
@@ -67,7 +67,7 @@ export default function Home({ passEnv }) {
   return (
     <div>
       <Head>
-        <title>Job assistance</title>
+        <title>FEBICHAM</title>
         <script async type='text/javascript' src="/js/newrelic.js"></script>
         <script async type='text/javascript' src="/js/gtm.js"></script>
         <link rel="icon" type="image/x-icon" href="/favicon.png"></link>
@@ -75,18 +75,18 @@ export default function Home({ passEnv }) {
 
       <main className={styles.main}>
         <div className={styles.manu}>
-          <img src='/Avatar.png' width={150} height={150} />
+          <img src='/Avatar_Febicham2.png' width={200}  />
         </div>
-        <h3>
+        {/* <h3>
           {lang === 'SPA' ?
             'Asistente Laboral'
             :
             'Job assistance'
           }
-        </h3>
-        <div className={styles.btnsLang}>
+        </h3> */}
+        {/* <div className={styles.btnsLang}>
           <span onClick={() => handleLang('ENG')} className={lang === 'ENG' ? styles.btnSelected : ''}>English</span> | <span onClick={() => handleLang('SPA')} className={lang === 'SPA' ? styles.btnSelected : ''}>Español</span>
-        </div>
+        </div> */}
         {!pass &&
           <>
             {(passwordInputLength > 5 && passwordInputLength <= 15) && <div className={styles.disclaimerPass}> {lang === 'SPA' ? 'Mmm me parece que no tenes la password' : "Mmm, it seems to me that you don't have the password."}</div>}
@@ -97,9 +97,9 @@ export default function Home({ passEnv }) {
         {pass &&
           <>
             {!firstIteration &&
-              <p>
+              <p style={{textAlign:'center'}}>
                 {lang === 'SPA' ?
-                  "Siéntete libre de hacerme consultas sobre los postulantes. Seré tu asistente y responderé basándome en sus conocimientos técnicos que ellos mismos me han definido." :
+                  "Bienvenido a FEBICHAM, la Federación de Cámaras de Comercio Binacionales. Estamos aquí para ayudarle a conectar con oportunidades de negocios multinacionales y desarrollar relaciones comerciales y culturales entre nuestras Cámaras afiliadas. ¡Estamos encantados de tenerte aquí!" :
                   "Feel free to ask me questions about the applicants. I will be your assistant and I will answer based on their technical knowledge that they themselves have defined for me."
                 }
               </p>
@@ -116,14 +116,14 @@ export default function Home({ passEnv }) {
               <input
                 type="text"
                 name="Human"
-                placeholder={lang === 'SPA' ? "Su consulta no molesta 😊" : "Your inquiry is not a bother 😊"}
+                placeholder={lang === 'SPA' ? "Realice su consulta" : "Your inquiry is not a bother 😊"}
                 value={messageInput}
                 onChange={(e) => setMessageInput(e.target.value)}
                 disabled={isLoading}
               />
               {isLoading || messageInput === '' && <div className={styles.disclaimer}>{lang === 'SPA' ? "Tip: Se habilitará el boton ni bien escriba su consulta" : "Tip: The button will be enabled as soon as you write your query."}</div>}
               {isLoading ? <div className={styles.writing}>{lang === 'SPA' ? "Estamos pensando la respuesta..." : "We're thinking about the response with Manu..."}</div> :
-                <input type="submit" value={lang === 'SPA' ? "Preguntas sobre Manu y Ale" : " Questions about Manu y Ale"} disabled={isLoading || messageInput === ''} />}
+                <input type="submit" value={lang === 'SPA' ? "Consultar sobre FEBICHAM" : " Questions about Manu y Ale"} disabled={isLoading || messageInput === ''} />}
             </form>
             
           </>
