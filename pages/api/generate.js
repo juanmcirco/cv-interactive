@@ -102,7 +102,6 @@ function generatePrompt(human) {
   4. Sus concurridos eventos, presentaciones de destacados y reconocidos profesionales, ayudas para organizar misiones comerciales de sus miembros y creación de Rondas de Negocios para los mismos.
   5. Los eventos de capacitación de diferentes organizaciones cuyos temas sean relacionados con negocios y gerencia, presentados de una manera anticipada y accesible en el web page de FEBICHAM.
   6. La agenda de eventos semanales (Webinars) organizados por las distintas Cámaras ayudan sin duda a su difusión y lo mismo ocurre con los documentos que se preparen para cualquier tema que pueda ser de utilidad para todos los miembros de cada una de las Cámaras.
-  
   Human: ${capitalizedHuman}
   AI:
 `;
