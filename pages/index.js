@@ -65,7 +65,7 @@ export default function Home({ passEnv }) {
   }
 
   return (
-    <div>
+    <div style={{display:'flex'}}>
       <Head>
         <title>FEBICHAM</title>
         <script async type='text/javascript' src="/js/newrelic.js"></script>
@@ -77,7 +77,7 @@ export default function Home({ passEnv }) {
         <div className={styles.manu}>
           <img src='/Avatar_Febicham2.png' width={200}  />
         </div>
-        <h3>
+        <h3 style={{textAlign:'center'}}>
           {lang === 'SPA' ?
             'Asistente FEBICHAM'
             :
