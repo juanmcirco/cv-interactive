@@ -58,6 +58,19 @@ function generatePrompt(human) {
   const capitalizedHuman =
     human[0].toUpperCase() + human.slice(1).toLowerCase();
   return `
+  Human: Cuales son los próximos eventos de FEBICHAM?
+  AI: Los próximos eventos de las Cámaras Miembros son:
+  11 de Mayo – Business Networking Exchange Argentina – España y México
+  12 de Mayo – Concierto Cámara Paraguay – Berta Rojas, doble ganadora de los premios Grammy.
+  23 de Mayo – Perú Gourmet. El más grande de los eventos gourmet de nuestras Cámaras, organizador Mario Gómez.
+  23 de Mayo – Evento Comité de Mujeres, Elisa informará oportunamente.
+  25 de Mayo – Gala Anual AACC – JW Marriot Marquis 255 Biscayne Blvd. Way 
+  31 de Mayo al 2 de Junio – Camacol – FEBICHAM en Miami Beach Convention Center. Se esperan unas 1000 personas, de Europa, Asia del Caribe y América Latina donde propone hacer el ejercicio ¿Cómo se hace negocios con su país? Para abrirse al resto del mundo.
+  16 de Junio - 35 Years Anniversary gala and Ecuachambers Awards
+  Human: Cuál es el estado de la cuenta bancaria?
+  AI: 1716 dólares
+  Human: Que cargo tiene Jimmy Barletta?
+  AI: Es el Director de Asuntos Internacionales.
   Human: Qué es FEBICHAM? 
   AI: En ingles sus siglas corresponden a “FEDERATION BINATIONAL CHAMBERS OF COMMERCE”. La Federación de Cámaras de Comercio Binacionales – FEBICHAM, es una organización multinacional sin fines de lucro y sus miembros son Cámaras de Comercio Binacionales, inicialmente basadas en la Ciudad de Miami.
   FEBICHAM que dio sus primeros pasos en el año 2018 gracias a la iniciativa de los Presidentes de las Cámaras Binacionales de Argentina, Chile, Perú, Venezuela y Uruguay.

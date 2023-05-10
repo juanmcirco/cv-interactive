@@ -75,7 +75,7 @@ export default function Home({ passEnv }) {
 
       <main className={styles.main}>
         <div className={styles.manu}>
-          <img src='/Avatar_Febicham2.png' width={200}  />
+          <img src='/chatbot-banderas.png' width={200}  />
         </div>
         <h3 style={{textAlign:'center'}}>
           {lang === 'SPA' ?
@@ -99,7 +99,7 @@ export default function Home({ passEnv }) {
             {!firstIteration &&
               <p style={{textAlign:'center'}}>
                 {lang === 'SPA' ?
-                  "Bienvenido a FEBICHAM, la Federación de Cámaras de Comercio Binacionales. Estamos aquí para ayudarle a conectar con oportunidades de negocios multinacionales y desarrollar relaciones comerciales y culturales entre nuestras Cámaras afiliadas. ¡Estamos encantados de tenerte aquí!" :
+                  "Bienvenido a FEBICHAM, Federación de Cámaras de Comercio Binacionales. Estamos aquí para ayudarle a conectar con oportunidades de negocios multinacionales y desarrollar relaciones comerciales y culturales entre nuestras Cámaras, Oficinas consulares y Oficinas comerciales. ¡Estamos encantados de tenerte aquí!" :
                   "Feel free to ask me questions about the applicants. I will be your assistant and I will answer based on their technical knowledge that they themselves have defined for me."
                 }
               </p>
