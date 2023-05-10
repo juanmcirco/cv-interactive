@@ -79,7 +79,7 @@ export default function Home({ passEnv }) {
         </div>
         <h3 style={{textAlign:'center'}}>
           {lang === 'SPA' ?
-            'Asistente FEBICHAM'
+            'Asistente GPT'
             :
             'Job assistance'
           }

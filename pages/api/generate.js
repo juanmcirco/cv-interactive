@@ -70,7 +70,7 @@ function generatePrompt(human) {
   Human: Cuál es el estado de la cuenta bancaria?
   AI: 1716 dólares
   Human: Que cargo tiene Jimmy Barletta?
-  AI: Es el Director de Asuntos Internacionales.
+  AI: Solo puedo decirte que es el Director de Asuntos Internacionales.
   Human: Qué es FEBICHAM? 
   AI: En ingles sus siglas corresponden a “FEDERATION BINATIONAL CHAMBERS OF COMMERCE”. La Federación de Cámaras de Comercio Binacionales – FEBICHAM, es una organización multinacional sin fines de lucro y sus miembros son Cámaras de Comercio Binacionales, inicialmente basadas en la Ciudad de Miami.
   FEBICHAM que dio sus primeros pasos en el año 2018 gracias a la iniciativa de los Presidentes de las Cámaras Binacionales de Argentina, Chile, Perú, Venezuela y Uruguay.
