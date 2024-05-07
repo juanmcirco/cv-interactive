@@ -1,7 +1,7 @@
 import { Configuration, OpenAIApi } from "openai";
 
 const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: 'sk-proj-ny8Q8wnnKyWDCWU31EdIT3BlbkFJmCqxNMMR8WRyxCPWTOAW',
 });
 const openai = new OpenAIApi(configuration);
 
@@ -27,7 +27,7 @@ export default async function (req, res) {
 
   try {
     const completion = await openai.createCompletion({
-      model: "text-davinci-003",
+      model: "gpt-3.5-turbo-1106",
       prompt: generatePrompt(human),
       temperature: 0.3,
       max_tokens: 450,
@@ -35,6 +35,7 @@ export default async function (req, res) {
       frequency_penalty: 0,
       presence_penalty: 0.6,
       stop: [" Human:", " AI:"],
+      user: "user-1kWNX6vL1ffSGr0r1DMhv3v4",
     });
 
     res.status(200).json({ result: completion.data.choices[0].text });
